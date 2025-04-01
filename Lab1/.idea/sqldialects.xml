@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="SqlDialectMappings">
+    <file url="file://$PROJECT_DIR$/create.sql" dialect="Oracle" />
+    <file url="file://$PROJECT_DIR$/data.sql" dialect="Oracle" />
+    <file url="file://$PROJECT_DIR$/zad0.sql" dialect="Oracle" />
+    <file url="file://$PROJECT_DIR$/zad1.sql" dialect="Oracle" />
+    <file url="file://$PROJECT_DIR$/zad2.sql" dialect="Oracle" />
+    <file url="file://$PROJECT_DIR$/zad3.sql" dialect="Oracle" />
+    <file url="file://$PROJECT_DIR$/zad4.sql" dialect="Oracle" />
+    <file url="file://$PROJECT_DIR$/zad5.sql" dialect="Oracle" />
+    <file url="file://$PROJECT_DIR$/zad6.sql" dialect="Oracle" />
+    <file url="file://$PROJECT_DIR$/zad6a.sql" dialect="Oracle" />
+    <file url="file://$PROJECT_DIR$/zad6b.sql" dialect="Oracle" />
+  </component>
+</project>
