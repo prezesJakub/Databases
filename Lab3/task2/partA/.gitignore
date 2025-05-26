@@ -1,0 +1,39 @@
+# .NET / C# standard
+bin/
+obj/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Rider / VS Code
+.idea/
+.vscode/
+*.code-workspace
+
+# Build outputs
+*.dll
+*.exe
+*.pdb
+*.cache
+*.log
+
+# SQLite database files
+*.db
+*.db-shm
+*.db-wal
+
+# EF Core migrations (opcjonalnie ignorowane, zależy od workflowu)
+# Migrations/
+
+# ReSharper
+_ReSharper*/
+*.DotSettings.user
+
+# ASP.NET (jeśli kiedyś dodasz)
+appsettings.Development.json
+appsettings.Production.json
+
+# System/OS
+.DS_Store
+Thumbs.db
