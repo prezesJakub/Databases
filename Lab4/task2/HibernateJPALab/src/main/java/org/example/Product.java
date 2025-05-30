@@ -13,8 +13,16 @@ public class Product {
     private String productName;
     private int unitsInStock;
 
-    @ManyToMany(mappedBy = "products")
-    private List<Supplier> suppliers = new ArrayList<>();
+    @ManyToOne
+    @JoinColumn(name = "supplier_id")
+    private Supplier supplier;
+
+    @ManyToOne
+    @JoinColumn(name = "category_id")
+    private Category category;
+
+    @OneToMany(mappedBy = "product", cascade = CascadeType.ALL)
+    private List<InvoiceProduct> invoiceProducts = new ArrayList<>();
 
     public Product() {}
 
@@ -31,5 +39,23 @@ public class Product {
     }
     public int getUnitsInStock() {
         return unitsInStock;
+    }
+
+    public Supplier getSupplier() {
+        return supplier;
+    }
+    public void setSupplier(Supplier supplier) {
+        this.supplier = supplier;
+    }
+
+    public Category getCategory() {
+        return category;
+    }
+    public void setCategory(Category category) {
+        this.category = category;
+    }
+
+    public List<InvoiceProduct> getInvoiceProducts() {
+        return invoiceProducts;
     }
 }

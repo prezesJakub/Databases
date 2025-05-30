@@ -16,16 +16,45 @@ public class Main {
         Session session = sessionFactory.openSession();
         Transaction tx = session.beginTransaction();
 
+        Supplier supplier1 = new Supplier("Biurmax", "Papierowa 8", "Gdańsk");
+        Supplier supplier2 = new Supplier("PaperPro", "Uliczna 10", "Warszawa");
+        Supplier supplier3 = new Supplier("NoProductCompany", "Pusta 1", "Poznań");
+
+        Category officeSupplies = new Category("Artykuły biurowe");
+        Category writingTools = new Category("Przybory do pisania");
+
         Product p1 = new Product("Spinacz", 10);
         Product p2 = new Product("Zszywacz", 15);
+        Product p3 = new Product("Długopis", 50);
+        Product p4 = new Product("Linijka", 25);
 
-        Supplier supplier = new Supplier("Biurmax", "Papierowa 8", "Gdańsk");
-        supplier.addProduct(p1);
-        supplier.addProduct(p2);
+        supplier1.addProduct(p1);
+        supplier1.addProduct(p2);
+        supplier1.addProduct(p3);
+        supplier2.addProduct(p4);
 
-        session.persist(p1);
-        session.persist(p2);
-        session.persist(supplier);
+        officeSupplies.addProduct(p1);
+        officeSupplies.addProduct(p2);
+        officeSupplies.addProduct(p4);
+        writingTools.addProduct(p3);
+
+        session.persist(supplier1);
+        session.persist(supplier2);
+        session.persist(supplier3);
+        session.persist(officeSupplies);
+        session.persist(writingTools);
+
+        Invoice invoice1 = new Invoice("0001");
+        Invoice invoice2 = new Invoice("0002");
+
+        invoice1.addProduct(p1, 3);
+        invoice1.addProduct(p2, 2);
+
+        invoice2.addProduct(p2, 5);
+        invoice2.addProduct(p3, 1);
+
+        session.persist(invoice1);
+        session.persist(invoice2);
 
         tx.commit();
         session.close();

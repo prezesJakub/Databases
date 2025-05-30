@@ -15,12 +15,7 @@ public class Supplier {
     private String street;
     private String city;
 
-    @ManyToMany
-    @JoinTable(
-            name = "suppliers_products",
-            joinColumns = @JoinColumn(name = "supplier_id"),
-            inverseJoinColumns = @JoinColumn(name = "product_id")
-    )
+    @OneToMany(mappedBy = "supplier", cascade = CascadeType.ALL)
     private List<Product> products = new ArrayList<>();
 
     public Supplier() {}
@@ -46,5 +41,6 @@ public class Supplier {
 
     public void addProduct(Product product) {
         products.add(product);
+        product.setSupplier(this);
     }
 }
