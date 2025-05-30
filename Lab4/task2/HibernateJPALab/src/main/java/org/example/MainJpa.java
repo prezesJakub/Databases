@@ -13,9 +13,10 @@ public class MainJpa {
 
         tx.begin();
 
-        Supplier supplier1 = new Supplier("Biurmax", "Papierowa 8", "Gdańsk");
-        Supplier supplier2 = new Supplier("PaperPro", "Uliczna 10", "Warszawa");
-        Supplier supplier3 = new Supplier("NoProductCompany", "Pusta 1", "Poznań");
+        Supplier supplier1 = new Supplier("Biurmax", "Papierowa 8", "Gdańsk", "00-001", "11111111");
+        Supplier supplier2 = new Supplier("PaperPro", "Uliczna 10", "Warszawa", "00-002", "22222222");
+        Supplier supplier3 = new Supplier("NoProductCompany", "Pusta 1", "Poznań", "50-031", "13131313");
+        Customer customer1 = new Customer("Biedronka", "Aleje Jerozolimskie 2", "Warszawa", "00-053", 0.1);
 
         Category officeSupplies = new Category("Artykuły biurowe");
         Category writingTools = new Category("Przybory do pisania");
@@ -38,6 +39,7 @@ public class MainJpa {
         em.persist(supplier1);
         em.persist(supplier2);
         em.persist(supplier3);
+        em.persist(customer1);
         em.persist(officeSupplies);
         em.persist(writingTools);
 

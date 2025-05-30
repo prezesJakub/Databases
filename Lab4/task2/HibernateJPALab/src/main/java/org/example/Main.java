@@ -16,9 +16,9 @@ public class Main {
         Session session = sessionFactory.openSession();
         Transaction tx = session.beginTransaction();
 
-        Supplier supplier1 = new Supplier("Biurmax", "Papierowa 8", "Gdańsk");
-        Supplier supplier2 = new Supplier("PaperPro", "Uliczna 10", "Warszawa");
-        Supplier supplier3 = new Supplier("NoProductCompany", "Pusta 1", "Poznań");
+        Supplier supplier1 = new Supplier("Biurmax", "Papierowa 8", "Gdańsk", "00-001", "11111111");
+        Supplier supplier2 = new Supplier("PaperPro", "Uliczna 10", "Warszawa", "00-002", "22222222");
+        Supplier supplier3 = new Supplier("NoProductCompany", "Pusta 1", "Poznań", "50-031", "13131313");
 
         Category officeSupplies = new Category("Artykuły biurowe");
         Category writingTools = new Category("Przybory do pisania");

@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <persistence xmlns="https://jakarta.ee/xml/ns/persistence" version="3.0">
     <persistence-unit name="myJpaUnit">
+        <class>org.example.Address</class>
         <class>org.example.Category</class>
-        <class>org.example.Product</class>
-        <class>org.example.Supplier</class>
+        <class>org.example.Company</class>
+        <class>org.example.Customer</class>
         <class>org.example.Invoice</class>
         <class>org.example.InvoiceProduct</class>
+        <class>org.example.Product</class>
+        <class>org.example.Supplier</class>
 
         <properties>
             <property name="jakarta.persistence.jdbc.driver" value="org.apache.derby.jdbc.ClientDriver"/>

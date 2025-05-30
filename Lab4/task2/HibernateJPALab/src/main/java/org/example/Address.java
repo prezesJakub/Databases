@@ -1,7 +1,6 @@
 package org.example;
 
 import jakarta.persistence.*;
-import org.h2.engine.User;
 
 @Entity
 public class Address {
@@ -11,15 +10,17 @@ public class Address {
 
     private String street;
     private String city;
+    private String zipCode;
 
     @OneToOne(mappedBy = "address")
-    private Supplier supplier;
+    private Company company;
 
     public Address() {}
 
-    public Address(String street, String city) {
+    public Address(String street, String city, String zipCode) {
         this.street = street;
         this.city = city;
+        this.zipCode = zipCode;
     }
 
     public int getId() {
@@ -33,7 +34,10 @@ public class Address {
     public String getCity() {
         return city;
     }
-    public Supplier getSupplier() {
-        return supplier;
+    public String getZipCode() {
+        return zipCode;
+    }
+    public Company getCompany() {
+        return company;
     }
 }
