@@ -12,8 +12,10 @@ public class Supplier {
     private int id;
 
     private String companyName;
-    private String street;
-    private String city;
+
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "address_id")
+    private Address address;
 
     @OneToMany(mappedBy = "supplier", cascade = CascadeType.ALL)
     private List<Product> products = new ArrayList<>();
@@ -22,8 +24,7 @@ public class Supplier {
 
     public Supplier(String companyName, String street, String city) {
         this.companyName = companyName;
-        this.street = street;
-        this.city = city;
+        this.address = new Address(street, city);
     }
 
     public int getId() {
@@ -32,11 +33,8 @@ public class Supplier {
     public String getCompanyName() {
         return companyName;
     }
-    public String getStreet() {
-        return street;
-    }
-    public String getCity() {
-        return city;
+    public Address getAddress() {
+        return address;
     }
 
     public void addProduct(Product product) {

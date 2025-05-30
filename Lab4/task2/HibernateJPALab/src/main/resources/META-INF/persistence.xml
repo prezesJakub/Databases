@@ -8,10 +8,10 @@
         <class>org.example.InvoiceProduct</class>
 
         <properties>
-            <property name="jakarta.persistence.jdbc.driver" value="org.h2.Driver"/>
-            <property name="jakarta.persistence.jdbc.url" value="jdbc:h2:./database"/>
-            <property name="jakarta.persistence.jdbc.user" value="sa"/>
-            <property name="jakarta.persistence.jdbc.password" value=""/>
+            <property name="jakarta.persistence.jdbc.driver" value="org.apache.derby.jdbc.ClientDriver"/>
+            <property name="jakarta.persistence.jdbc.url" value="jdbc:derby://127.0.0.1/JakubZajacDatabase;create=true"/>
+            <property name="jakarta.persistence.jdbc.user" value="app"/>
+            <property name="jakarta.persistence.jdbc.password" value="app"/>
 
             <property name="jakarta.persistence.schema-generation.database.action" value="drop-and-create"/>
             <property name="hibernate.show_sql" value="true"/>
