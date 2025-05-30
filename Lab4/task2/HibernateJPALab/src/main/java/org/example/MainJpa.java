@@ -50,8 +50,25 @@ public class MainJpa {
         invoice2.addProduct(p2, 5);
         invoice2.addProduct(p3, 1);
 
+        Invoice invoice3 = new Invoice("0003");
+
+        Product p5 = new Product("Kalkulator", 20);
+        Product p6 = new Product("Marker", 30);
+
+        invoice3.addProduct(p5, 2);
+        invoice3.addProduct(p6, 3);
+
         em.persist(invoice1);
         em.persist(invoice2);
+        em.persist(invoice3);
+
+        Product p7 = new Product("Teczka", 10);
+
+        Invoice invoice4 = new Invoice("0004");
+
+        invoice4.addProduct(p7, 1);
+
+        em.persist(invoice4);
 
         tx.commit();
         em.close();
