@@ -16,13 +16,16 @@ public class Main {
         Session session = sessionFactory.openSession();
         Transaction tx = session.beginTransaction();
 
-        Supplier supplier = new Supplier("Firma Kredkowa", "Ulica Kolorowa 5", "Warszawa");
-        session.save(supplier);
+        Product p1 = new Product("Spinacz", 10);
+        Product p2 = new Product("Zszywacz", 15);
 
-        Product product = new Product("Kredki", 111);
-        session.save(product);
+        Supplier supplier = new Supplier("Biurmax", "Papierowa 8", "Gdańsk");
+        supplier.addProduct(p1);
+        supplier.addProduct(p2);
 
-        product.setSupplier(supplier);
+        session.persist(p1);
+        session.persist(p2);
+        session.persist(supplier);
 
         tx.commit();
         session.close();

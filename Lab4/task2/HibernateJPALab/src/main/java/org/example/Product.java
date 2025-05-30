@@ -2,17 +2,19 @@ package org.example;
 
 import jakarta.persistence.*;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Entity
 public class Product {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int productID;
     private String productName;
     private int unitsInStock;
 
-    @ManyToOne
-    @JoinColumn(name = "supplier_id")
-    private Supplier supplier;
+    @ManyToMany(mappedBy = "products")
+    private List<Supplier> suppliers = new ArrayList<>();
 
     public Product() {}
 
@@ -29,13 +31,5 @@ public class Product {
     }
     public int getUnitsInStock() {
         return unitsInStock;
-    }
-
-    public void setSupplier(Supplier supplier) {
-        this.supplier = supplier;
-    }
-
-    public Supplier getSupplier() {
-        return supplier;
     }
 }
